@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/one_show.css" />
+    <title>Show</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <a href="/logout" class="top-link">Logout</a>
+        <a href="/shows/all" class="top-link">Tv Shows</a>
+        <a href="/shows/new" class="top-button">Create a show</a>
+
+        <h1>{{ one_show.title }}</h1>
+        <p>Recommended by: {{ one_show.user.first_name }}</p>
+        <h3>Network:</h3>
+        <p>{{ one_show.network }}</p>
+        <h3>Release Date:</h3>
+        <p>{{ one_show.release_date }}</p>
+        <h4>Comments:</h4>
+        <p>{{ one_show.comments }}</p>
+      </div>
+    </div>
+  </body>
+</html>

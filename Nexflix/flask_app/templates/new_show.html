@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/new_show.css" />
+    <title>Add New Show</title>
+  </head>
+  <body>
+    <div class="container">
+      {% with messages = get_flashed_messages() %} {% if messages %} {% for
+      message in messages %}
+      <li>{{message}}</li>
+      {% endfor %} {% endif %} {% endwith %}
+      <div class="box">
+        <form action="/shows/create" method="post">
+          <div class="header">
+            <h1>Recommend a new show</h1>
+            <a href="/logout">Logout</a>
+            <a href="/shows/all">Tv Shows</a>
+          </div>
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title_entry" />
+          </div>
+          <div class="form-group">
+            <label for="network">Network:</label>
+            <textarea
+              name="network"
+              id="network_entry"
+              rows="5"
+              cols="40"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="release_date">Release Date:</label>
+            <input
+              class="date-control"
+              type="date"
+              name="release_date"
+              id="release_date"
+            />
+          </div>
+          <div class="form-group">
+            <label for="comments">Comments:</label>
+            <textarea
+              name="comments"
+              id="comments_entry"
+              rows="5"
+              cols="40"
+            ></textarea>
+          </div>
+          <input class="button" type="submit" value="Add Show" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

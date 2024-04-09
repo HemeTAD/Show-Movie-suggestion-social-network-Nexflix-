@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit recommendation</title>
+    <link rel="stylesheet" href="/static/edit.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="/shows/update" method="post">
+        <input type="hidden" name="show_id" value="{{edit_show.id}}" />
+        <div class="box">
+          <div class="header">
+            <h1>Edit recommendation: {{edit_show.title}}</h1>
+            <a href="/shows/all">Tv Shows</a>
+            <a href="/logout">logout</a>
+          </div>
+          <div class="title">
+            <label for="title">Title:</label>
+            <input
+              value="{{edit_show.title}}"
+              type="text"
+              name="title"
+              id="title_entry"
+            />
+          </div>
+          <div class="network">
+            <label for="network">Networks:</label>
+            <input
+              value="{{edit_show.network}}"
+              type="text"
+              name="network"
+              id="network_entry"
+            />
+          </div>
+          <div class="date-form">
+            <input
+              value="{{edit_show.release_date}}"
+              class="date-control"
+              type="date"
+              name="release_date"
+              id="release_date"
+            />
+            <label for="release_date">Date released</label>
+          </div>
+          <div class="comments">
+            <label for="comments"> Comments:</label>
+            <input
+              value="{{edit_show.comments}}"
+              type="text"
+              name="comments"
+              id="comments_entry"
+            />
+          </div>
+          <input class="button" type="submit" value="submit" />
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
